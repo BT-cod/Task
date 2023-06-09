@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signUpImage from './assets/signup.webp';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import initializeFirebaseApp from './Config';
@@ -9,6 +9,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cpassword, setCpassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSignUp = async () => {
     if (name === '' || email === '' || password === '' || cpassword === '') {
@@ -25,7 +26,7 @@ const SignUp = () => {
         setPassword('');
         setCpassword('');
         alert('Registered Successfully');
-        window.location.href = '/Task/login';
+       navigate('/Task/login');
       } catch (error) {
         console.log(error);
         alert('Failed to register. Please try again.');

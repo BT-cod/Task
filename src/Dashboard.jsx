@@ -3,10 +3,12 @@ import Tasks from "./Tasks";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, collection, addDoc, query, where, onSnapshot, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import initializeFirebaseApp from "./Config";
+import { useNavigate } from "react-router-dom";
 
 initializeFirebaseApp();
 
 const Dashboard = () => {
+  const navigate = useNavigate();
         const [isModalOpen, setIsModalOpen] = useState(false);
         const [isUpModalOpen, setUpModalOpen] = useState(false);
         const [tasks, setTasks] = useState([]);
@@ -130,7 +132,7 @@ const Dashboard = () => {
     signOut(auth)
       .then(() => {
         console.log("Logout successful");
-        window.location.href = '/Task/login';
+        navigate("/Task/login");
       })
       .catch((error) => {
         console.log("Logout error:", error);

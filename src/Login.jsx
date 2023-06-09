@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logInImage from "./assets/login.jpg";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import initializeFirebaseApp from "./Config";
@@ -7,6 +7,7 @@ import initializeFirebaseApp from "./Config";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     if (email === "" || password === "") {
@@ -22,7 +23,7 @@ const Login = () => {
       alert("Login Successful");
       // Redirect to the desired page after successful login
       // You can use history.push('/dashboard') to navigate to a specific page
-      window.location.href = '/Task/dashboard';
+      navigate("/Task/dashboard");
     } catch (error) {
       console.log(error);
       alert("Login Failed. Please check your credentials.");
