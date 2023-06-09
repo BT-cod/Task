@@ -8,6 +8,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+      <Route exact path="/Task" element={<SignUp />} />
         <Route path="/" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
