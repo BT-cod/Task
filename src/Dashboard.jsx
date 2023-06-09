@@ -130,7 +130,7 @@ const Dashboard = () => {
     signOut(auth)
       .then(() => {
         console.log("Logout successful");
-        window.location.href = '/login';
+        window.location.href = '/Task/login';
       })
       .catch((error) => {
         console.log("Logout error:", error);

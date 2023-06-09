@@ -22,7 +22,7 @@ const Login = () => {
       alert("Login Successful");
       // Redirect to the desired page after successful login
       // You can use history.push('/dashboard') to navigate to a specific page
-      window.location.href = '/dashboard';
+      window.location.href = '/Task/dashboard';
     } catch (error) {
       console.log(error);
       alert("Login Failed. Please check your credentials.");
@@ -39,7 +39,7 @@ const Login = () => {
           </mark>
         </h1>
         <Link
-          to="/"
+          to="/Task"
           className="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
         >
           SignUp
